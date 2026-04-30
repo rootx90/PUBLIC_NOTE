@@ -50,3 +50,42 @@
 15. TCP-vs-UDP.md
 16. TLS-Handshake-and-Encryption.md
 17. HTTP-and-HTTPS-Request-Lifecycle.md
+```
+
+
+---
+
+##Quick Map
+```
+Browser / Application
+        ↓
+DNS resolves domain name to IP
+        ↓
+TCP opens a reliable connection
+        ↓
+TLS secures the connection
+        ↓
+HTTP sends the request
+        ↓
+Ports identify the correct application
+        ↓
+IP routes the packet between networks
+        ↓
+MAC delivers the frame to the next hop
+        ↓
+Bits travel through cable or Wi-Fi
+
+```
+---
+##Important Rules
+
+```
+IP Address  = final logical destination
+MAC Address = next-hop local delivery
+Port        = application/service inside the device
+ARP         = finds MAC address for a known IP in the local network
+NAT         = translates Private IP to Public IP
+TCP         = reliable and ordered
+UDP         = fast and lightweight
+TLS         = encryption and authentication
+DNS         = domain name to IP address
