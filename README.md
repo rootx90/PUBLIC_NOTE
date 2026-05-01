@@ -1,91 +1,220 @@
-# OSI Layers and Networking Basics
+# Networking Notes
 
-مجموعة مقالات منظمة لفهم أساسيات الشبكات من نموذج OSI وحتى رحلة فتح موقع HTTPS في المتصفح.
+## المحتوى
 
-> الهدف من هذا المجلد: بناء مرجع عربي منظم ومناسب للنشر على GitHub، مع ترتيب تعليمي واضح وروابط بين الملفات.
+هذا المستودع يحتوي على ملاحظات منظمة لتعلم أساسيات الشبكات خطوة بخطوة.
 
----
-
-## Topics
-
-| # | Topic | File | Layer / Area |
-|---|---|---|---|
-| 1 | OSI Model Overview | [OSI Layers](./OSI-Layers.md) | All Layers |
-| 2 | Encapsulation and Decapsulation | [Packet Encapsulation and Decapsulation](./Packet-Encapsulation-and-Decapsulation.md) | All Layers |
-| 3 | IP Addressing and Subnetting | [IP Addressing and Subnetting](./IP-Addressing-and-Subnetting.md) | Layer 3 |
-| 4 | DHCP | [DHCP How Devices Get IP](./DHCP-How-Devices-Get-IP.md) | Network Configuration |
-| 5 | DNS | [DNS How Domain Names Work](./DNS-How-Domain-Names-Work.md) | Layer 7 |
-| 6 | ARP Protocol | [ARP Protocol](./ARP-Protocol.md) | Layer 2 / Layer 3 Bridge |
-| 7 | Switch in Layer 2 | [Switch Layer 2](./Switch-Layer-2.md) | Layer 2 |
-| 8 | VLANs and Trunking | [VLANs and Trunking](./VLANs-and-Trunking.md) | Layer 2 |
-| 9 | Router in Layer 3 | [Router Layer 3](./Router-Layer-3.md) | Layer 3 |
-| 10 | Routing Protocols | [Routing Protocols OSPF RIP BGP](./Routing-Protocols-OSPF-RIP-BGP.md) | Layer 3 |
-| 11 | ICMP, Ping, and Traceroute | [ICMP Ping and Traceroute](./ICMP-Ping-and-Traceroute.md) | Layer 3 |
-| 12 | NAT and PAT | [NAT and PAT](./NAT-and-PAT.md) | Layer 3 / Layer 4 |
-| 13 | Ports and Sockets | [Ports and Sockets](./Ports-and-Sockets.md) | Layer 4 |
-| 14 | TCP 3-Way Handshake | [TCP 3-Way Handshake](./TCP-3-Way-Handshake.md) | Layer 4 |
-| 15 | TCP vs UDP | [TCP vs UDP](./TCP-vs-UDP.md) | Layer 4 |
-| 16 | TLS Handshake and Encryption | [TLS Handshake and Encryption](./TLS-Handshake-and-Encryption.md) | Security / Above TCP |
-| 17 | HTTP/HTTPS Request Lifecycle | [HTTP and HTTPS Request Lifecycle](./HTTP-and-HTTPS-Request-Lifecycle.md) | Layer 7 |
 
 ---
 
-## Best Learning Order
+# Main Topics
+
+| # | File | Topic |
+|---|---|---|
+| 1 | [OSI Layers](./OSI-Layers.md) | شرح طبقات OSI |
+| 2 | [Packet Encapsulation and Decapsulation](./Packet-Encapsulation-and-Decapsulation.md) | تغليف وفك تغليف البيانات |
+| 3 | [IP Addressing and Subnetting](./IP-Addressing-and-Subnetting.md) | IP Address و Subnetting |
+| 4 | [DHCP - How Devices Get IP](./DHCP-How-Devices-Get-IP.md) | كيف يحصل الجهاز على IP |
+| 5 | [DNS - How Domain Names Work](./DNS-How-Domain-Names-Work.md) | كيف يعمل DNS |
+| 6 | [ARP Protocol](./ARP-Protocol.md) | كيف يعرف الجهاز MAC Address |
+| 7 | [Switch Layer 2](./Switch-Layer-2.md) | شرح Switch و MAC Table |
+| 8 | [VLANs and Trunking](./VLANs-and-Trunking.md) | VLANs و Trunk Ports |
+| 9 | [Router Layer 3](./Router-Layer-3.md) | شرح Router و Layer 3 |
+| 10 | [Routing Protocols OSPF RIP BGP](./Routing-Protocols-OSPF-RIP-BGP.md) | Routing Protocols |
+| 11 | [ICMP Ping and Traceroute](./ICMP-Ping-and-Traceroute.md) | Ping و Traceroute |
+| 12 | [NAT and PAT](./NAT-and-PAT.md) | NAT و PAT |
+| 13 | [Ports and Sockets](./Ports-and-Sockets.md) | Ports و Sockets |
+| 14 | [TCP 3-Way Handshake](./TCP-3-Way-Handshake.md) | بداية اتصال TCP |
+| 15 | [TCP vs UDP](./TCP-vs-UDP.md) | الفرق بين TCP و UDP |
+| 16 | [TLS Handshake and Encryption](./TLS-Handshake-and-Encryption.md) | TLS و HTTPS Encryption |
+| 17 | [HTTP and HTTPS Request Lifecycle](./HTTP-and-HTTPS-Request-Lifecycle.md) | رحلة فتح موقع HTTP/HTTPS |
+
+---
+
+# Practical and Extra Topics
+
+| # | File | Topic |
+|---|---|---|
+| 18 | [Network Troubleshooting Commands](./Network-Troubleshooting-Commands.md) | أوامر تشخيص مشاكل الشبكة |
+| 19 | [Networking Practical Labs](./Networking-Practical-Labs.md) | تطبيقات عملية و Labs |
+| 20 | [Wireshark Basics](./Wireshark-Basics.md) | أساسيات Wireshark وتحليل Packets |
+| 21 | [Common Networking Mistakes](./Common-Networking-Mistakes.md) | أشهر أخطاء الشبكات وطريقة تجنبها |
+
+---
+
+# Suggested Learning Path
+
+ابدأ بالترتيب التالي:
 
 ```text
-1. OSI-Layers.md
-2. Packet-Encapsulation-and-Decapsulation.md
-3. IP-Addressing-and-Subnetting.md
-4. DHCP-How-Devices-Get-IP.md
-5. DNS-How-Domain-Names-Work.md
-6. ARP-Protocol.md
-7. Switch-Layer-2.md
-8. VLANs-and-Trunking.md
-9. Router-Layer-3.md
-10. Routing-Protocols-OSPF-RIP-BGP.md
-11. ICMP-Ping-and-Traceroute.md
-12. NAT-and-PAT.md
-13. Ports-and-Sockets.md
-14. TCP-3-Way-Handshake.md
-15. TCP-vs-UDP.md
-16. TLS-Handshake-and-Encryption.md
-17. HTTP-and-HTTPS-Request-Lifecycle.md
+OSI Layers
+↓
+Encapsulation
+↓
+IP Addressing
+↓
+DHCP
+↓
+DNS
+↓
+ARP
+↓
+Switch
+↓
+VLANs
+↓
+Router
+↓
+Routing
+↓
+ICMP
+↓
+NAT
+↓
+Ports
+↓
+TCP Handshake
+↓
+TCP vs UDP
+↓
+TLS
+↓
+HTTP/HTTPS Lifecycle
+↓
+Troubleshooting Commands
+↓
+Practical Labs
+↓
+Wireshark
+↓
+Common Mistakes
 ```
-
 
 ---
 
-##Quick Map
-```
-Browser / Application
-        ↓
-DNS resolves domain name to IP
-        ↓
-TCP opens a reliable connection
-        ↓
-TLS secures the connection
-        ↓
-HTTP sends the request
-        ↓
-Ports identify the correct application
-        ↓
-IP routes the packet between networks
-        ↓
-MAC delivers the frame to the next hop
-        ↓
-Bits travel through cable or Wi-Fi
+# What You Will Learn
 
+بعد قراءة هذه الملفات، ستكون قادرًا على فهم:
+
+```text
+كيف تتحرك البيانات داخل الشبكة
+كيف يعمل IP و MAC Address
+كيف يحصل الجهاز على IP من DHCP
+كيف يتحول Domain Name إلى IP عن طريق DNS
+كيف تعمل Switches و Routers
+كيف تعمل VLANs
+كيف تعمل Routing Protocols
+كيف يعمل NAT و PAT
+ما معنى Ports و Sockets
+كيف يبدأ اتصال TCP
+الفرق بين TCP و UDP
+كيف يعمل TLS و HTTPS
+ماذا يحدث عند فتح موقع
+كيف تشخص مشاكل الشبكة
+كيف تستخدم Wireshark لفهم الترافيك
+أشهر الأخطاء التي يجب تجنبها
 ```
+
 ---
-##Important Rules
 
+# Important Commands
+
+## Windows
+
+```cmd
+ipconfig /all
+ipconfig /flushdns
+ping 8.8.8.8
+tracert 8.8.8.8
+nslookup google.com
+route print
+arp -a
+netstat -ano
 ```
-IP Address  = final logical destination
-MAC Address = next-hop local delivery
-Port        = application/service inside the device
-ARP         = finds MAC address for a known IP in the local network
-NAT         = translates Private IP to Public IP
-TCP         = reliable and ordered
-UDP         = fast and lightweight
-TLS         = encryption and authentication
-DNS         = domain name to IP address
+
+---
+
+## PowerShell
+
+```powershell
+Test-NetConnection google.com -Port 443
+Get-NetTCPConnection
+```
+
+---
+
+## Linux
+
+```bash
+ip addr
+ip route
+ip neigh
+ping 8.8.8.8
+traceroute 8.8.8.8
+dig google.com
+ss -tunap
+ss -tuln
+curl -v https://example.com
+nc -vz example.com 443
+```
+
+---
+
+## Wireshark Filters
+
+```text
+arp
+dns
+icmp
+tcp
+udp
+tls
+http
+ip.addr == 8.8.8.8
+tcp.port == 443
+udp.port == 53
+tcp.flags.syn == 1
+tcp.flags.reset == 1
+tcp.analysis.retransmission
+```
+
+---
+
+# Notes
+
+```text
+كل ملف مستقل ويمكن قراءته وحده
+لكن الأفضل قراءة الملفات بالترتيب
+الأمثلة عملية ومناسبة للتطبيق على جهازك أو Lab خاص بك
+استخدم أوامر الفحص فقط على شبكات تملكها أو لديك تصريح عليها
+```
+
+---
+
+# Repository Structure
+
+```text
+.
+├── README.md
+├── OSI-Layers.md
+├── Packet-Encapsulation-and-Decapsulation.md
+├── IP-Addressing-and-Subnetting.md
+├── DHCP-How-Devices-Get-IP.md
+├── DNS-How-Domain-Names-Work.md
+├── ARP-Protocol.md
+├── Switch-Layer-2.md
+├── VLANs-and-Trunking.md
+├── Router-Layer-3.md
+├── Routing-Protocols-OSPF-RIP-BGP.md
+├── ICMP-Ping-and-Traceroute.md
+├── NAT-and-PAT.md
+├── Ports-and-Sockets.md
+├── TCP-3-Way-Handshake.md
+├── TCP-vs-UDP.md
+├── TLS-Handshake-and-Encryption.md
+├── HTTP-and-HTTPS-Request-Lifecycle.md
+├── Network-Troubleshooting-Commands.md
+├── Networking-Practical-Labs.md
+├── Wireshark-Basics.md
+└── Common-Networking-Mistakes.md
+```
