@@ -1,3 +1,5 @@
+
+
 # Packet Encapsulation and Decapsulation
 
 ## الخيط الذهبي الذي يربط كل شيء
@@ -173,6 +175,16 @@ TCP Segment
 [TCP Header][Encrypted Data]
 ```
 
+> **مقارنة سريعة: شكل الـ Segment في TCP مقابل UDP:**
+> ```text
+> [TCP Header (20 Bytes)][Data] 
+> → ثقيل، يحتوي على أرقام الـ Sequence و Acknowledgment والتحكم بالتدفق.
+> 
+> [UDP Header (8 Bytes)][Data] 
+> → خفيف وسريع، لا يوجد به أي تحقق من وصول البيانات أو ترتيبها.
+> (ملاحظة: في UDP نسميه Datagram وليس Segment).
+> ```
+
 ---
 
 ## 4. Network Layer - Packet
@@ -238,6 +250,12 @@ EtherType
 ```text
 FCS = Frame Check Sequence
 ```
+
+> **ما هو الـ FCS (Frame Check Sequence)؟**
+> هو جزء يُضاف في نهاية الـ Frame (Trailer) وظيفته **اكتشاف الأخطاء (Error Detection)**.
+> يعمل كـ "ختم أمان"، عندما يصل الـ Frame للجهاز التالي، يعيد حساب قيمة الـ FCS، 
+> لو اختلف الرقم، يعني أن الإشارات تعرضت لتشويه (Interference) في الكابل أو الواي فاي، 
+> فيقوم الجهاز بإهمال الـ Frame بالكامل (Drop the Frame) ولا يرسله للطبقات العليا.
 
 النتيجة تصبح:
 
@@ -424,6 +442,38 @@ HTTP Response
 ```
 
 ويعرض المتصفح صفحة الموقع.
+
+---
+
+# مشكلة الحجم: MTU و Fragmentation
+
+بما أن كل طبقة تضيف Header، فإن حجم البيانات يكبر.
+لكن الكابلات والراوترات لها حد أقصى لحجم الـ Frame يمكنها حمله، يسمى:
+
+```text
+MTU = Maximum Transmission Unit
+```
+
+في شبكات الإيثرنت العادية (Ethernet):
+الحد الأقصى لحجم الـ Frame هو **1500 Bytes** (هذا يخص الـ Headers + Data بدون FCS).
+
+**ماذا لو كانت البيانات المرسلة أكبر من 1500 Byte؟ (مثل تنزيل ملف كبير)**
+
+يحدث شيء اسمه:
+
+```text
+Fragmentation (تقسيم)
+```
+
+في Layer 3، الراوتر يقوم بتقسيم الـ Packet الكبير إلى عدة Packets أصغر، 
+كل واحد منها لا يتجاوز الـ MTU المسموح به، ويرسلها على شكل Frames منفصلة.
+
+عندما تصل لجهاز المستقبل في Layer 3 مرة أخرى، يقوم الـ IP بتجميع هذه القطع (Reassembly) 
+باستخدام أرقام وضعها في الـ IP Header لتعود البيانات كما كانت.
+
+> **ملاحظة هامة:** يُفضل دائماً تجنب الـ Fragmentation لأنه يستهلك موارد الراوتر والجهاز،
+> ولذلك في العصر الحديث نستخدم تقنية MSS (Maximum Segment Size) في Layer 4 
+> حتى يقوم الـ TCP بتقسيم البيانات بحجم مناسب من البداية قبل أن تصل للراوتر!
 
 ---
 
@@ -880,6 +930,7 @@ TLS encrypts the Application Data
 ---
 
 ## Next Topic
+
 
 اقرأ بعد ذلك:
 
