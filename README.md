@@ -1,16 +1,28 @@
+
 # Networking Notes
 
-## المحتوى
+A structured collection of networking notes for learning computer networks step by step, starting from the fundamentals and moving toward practical troubleshooting, infrastructure concepts, and network security.
 
-هذا المستودع يحتوي على ملاحظات منظمة لتعلم أساسيات الشبكات خطوة بخطوة.
-
+هذا المستودع يحتوي على ملاحظات منظمة لتعلم أساسيات الشبكات خطوة بخطوة، بدايةً من المفاهيم الأساسية وحتى التطبيق العملي، مع التركيز على أمن الشبكات والبنية التحتية المتقدمة.
 
 ---
 
-# Main Topics
+## Table of Contents
+
+- [Main Topics](#main-topics)
+- [Practical and Extra Topics](#practical-and-extra-topics)
+- [Suggested Learning Path](#suggested-learning-path)
+- [What You Will Learn](#what-you-will-learn)
+- [Important Commands](#important-commands)
+- [Repository Structure](#repository-structure)
+- [Security Note](#security-note)
+
+---
+
+## Main Topics
 
 | # | File | Topic |
-|---|---|---|
+|---|------|-------|
 | 1 | [OSI Layers](./OSI-Layers.md) | شرح طبقات OSI |
 | 2 | [Packet Encapsulation and Decapsulation](./Packet-Encapsulation-and-Decapsulation.md) | تغليف وفك تغليف البيانات |
 | 3 | [IP Addressing and Subnetting](./IP-Addressing-and-Subnetting.md) | IP Address و Subnetting |
@@ -31,95 +43,148 @@
 
 ---
 
-# Practical and Extra Topics
+## Practical and Extra Topics
+
+### Practical Labs and Troubleshooting
 
 | # | File | Topic |
-|---|---|---|
+|---|------|-------|
 | 18 | [Network Troubleshooting Commands](./Network-Troubleshooting-Commands.md) | أوامر تشخيص مشاكل الشبكة |
 | 19 | [Networking Practical Labs](./Networking-Practical-Labs.md) | تطبيقات عملية و Labs |
 | 20 | [Wireshark Basics](./Wireshark-Basics.md) | أساسيات Wireshark وتحليل Packets |
 | 21 | [Common Networking Mistakes](./Common-Networking-Mistakes.md) | أشهر أخطاء الشبكات وطريقة تجنبها |
 
+### Network Security
+
+| # | File | Topic |
+|---|------|-------|
+| 23 | [Network Security Basics](./Network-Security-Basics.md) | مفاهيم الحماية، CIA Triad، والتهديدات |
+| 24 | [Firewall Basics](./Firewall-Basics.md) | أنواع الجدران النارية، Stateful vs Stateless، ACLs |
+| 25 | [VPN Basics](./VPN-Basics.md) | كيف تعمل الشبكات الخاصة الافتراضية، Tunneling و Encryption |
+
+### Enterprise Infrastructure
+
+| # | File | Topic |
+|---|------|-------|
+| 26 | [Proxy and Reverse Proxy](./Proxy-and-Reverse-Proxy.md) | الفرق بين Proxy و Reverse Proxy |
+| 27 | [Load Balancer Basics](./Load-Balancer-Basics.md) | Load Balancers، Algorithms، L4 vs L7 |
+| 28 | [CDN Basics](./CDN-Basics.md) | شبكات توصيل المحتوى وكيف يعمل Cloudflare كمثال |
+
+### Operating System Commands and Scanning Tools
+
+| # | File | Topic |
+|---|------|-------|
+| 30 | [Linux Networking Commands](./Linux-Networking-Commands.md) | أوامر الشبكات في Linux |
+| 31 | [Windows Networking Commands](./Windows-Networking-Commands.md) | أوامر الشبكات في Windows |
+| 32 | [Nmap Basics](./Nmap-Basics.md) | أساسيات أداة Nmap لفحص الشبكات |
+
+### Scenarios and References
+
+| # | File | Topic |
+|---|------|-------|
+| 29 | [DHCP DNS ARP Practical Scenarios](./DHCP-DNS-ARP-Practical-Scenarios.md) | سيناريوهات عملية تربط DHCP و DNS و ARP |
+| 33 | [Common Ports and Services](./Common-Ports-and-Services.md) | دليل شامل لأشهر البورتات والخدمات |
+| 34 | [Web Networking for Bug Bounty](./Web-Networking-for-Bug-Bounty.md) | فهم الشبكات من منظور Bug Bounty |
+| 22 | [Networking Glossary](./Networking-Glossary.md) | قاموس مصطلحات الشبكات |
+
+### Final Review
+
+| # | File | Topic |
+|---|------|-------|
+| 35 | [Final Networking Cheat Sheet](./Final-Networking-Cheat-Sheet.md) | ورقة مراجعة نهائية تجمع أهم المفاهيم |
+
 ---
 
-# Suggested Learning Path
+## Suggested Learning Path
 
-ابدأ بالترتيب التالي:
+To build a strong foundation, it is recommended to study the topics in the following order:
+
+### Stage 1: Fundamentals
 
 ```text
-OSI Layers
-↓
-Encapsulation
-↓
-IP Addressing
-↓
-DHCP
-↓
-DNS
-↓
-ARP
-↓
-Switch
-↓
-VLANs
-↓
-Router
-↓
-Routing
-↓
-ICMP
-↓
-NAT
-↓
-Ports
-↓
-TCP Handshake
-↓
-TCP vs UDP
-↓
-TLS
-↓
-HTTP/HTTPS Lifecycle
-↓
-Troubleshooting Commands
-↓
-Practical Labs
-↓
-Wireshark
-↓
-Common Mistakes
+OSI Layers → Encapsulation → IP Addressing → DHCP → DNS → ARP
+````
+
+### Stage 2: Network Devices and Routing
+
+```text
+Switch → VLANs → Router → Routing → ICMP → NAT → Ports
+```
+
+### Stage 3: Protocols and Applications
+
+```text
+TCP Handshake → TCP vs UDP → TLS → HTTP/HTTPS Lifecycle
+```
+
+### Stage 4: Practical Troubleshooting
+
+```text
+Troubleshooting Commands → Windows/Linux Commands → Wireshark → Labs → Common Mistakes
+```
+
+### Stage 5: Enterprise Infrastructure
+
+```text
+Proxy/Reverse Proxy → Load Balancer → CDN
+```
+
+### Stage 6: Network Security and Ethical Hacking
+
+```text
+Network Security → Firewall → VPN → Nmap → Web Networking for Bug Bounty
+```
+
+### Stage 7: Final Review
+
+```text
+Practical Scenarios → Glossary → Final Cheat Sheet
 ```
 
 ---
 
-# What You Will Learn
+## What You Will Learn
 
-بعد قراءة هذه الملفات، ستكون قادرًا على فهم:
+After studying these notes, you should be able to understand:
 
-```text
-كيف تتحرك البيانات داخل الشبكة
-كيف يعمل IP و MAC Address
-كيف يحصل الجهاز على IP من DHCP
-كيف يتحول Domain Name إلى IP عن طريق DNS
-كيف تعمل Switches و Routers
-كيف تعمل VLANs
-كيف تعمل Routing Protocols
-كيف يعمل NAT و PAT
-ما معنى Ports و Sockets
-كيف يبدأ اتصال TCP
-الفرق بين TCP و UDP
-كيف يعمل TLS و HTTPS
-ماذا يحدث عند فتح موقع
-كيف تشخص مشاكل الشبكة
-كيف تستخدم Wireshark لفهم الترافيك
-أشهر الأخطاء التي يجب تجنبها
-```
+### Networking Fundamentals
+
+* How data moves through a network using Encapsulation and Decapsulation.
+* The difference between IP Address and MAC Address.
+* How devices get an IP address using DHCP.
+* How domain names are resolved into IP addresses using DNS.
+* How ARP is used to discover MAC addresses inside a local network.
+
+### Network Devices and Routing
+
+* How switches and routers work.
+* The difference between Layer 2 and Layer 3 devices.
+* How VLANs and Trunk Ports are used to separate networks.
+* How routing protocols such as OSPF, RIP, and BGP work.
+* How NAT and PAT allow private networks to access the internet.
+* What ports and sockets are and why they are important.
+
+### Protocols
+
+* How a TCP connection starts using the 3-Way Handshake.
+* The difference between TCP and UDP.
+* How TLS encrypts communication in HTTPS.
+* What happens step by step when you open a website in a browser.
+
+### Practical Skills and Security
+
+* How to troubleshoot network problems from Layer 1 to Layer 7.
+* How to use common Windows and Linux networking commands.
+* How to use Wireshark to analyze network traffic.
+* Common mistakes made in networking and how to avoid them.
+* How firewalls, VPNs, proxies, load balancers, and CDNs work.
+* How to look at networks from a Bug Bounty and ethical hacking perspective.
 
 ---
 
-# Important Commands
+## Important Commands
 
-## Windows
+### Windows CMD
 
 ```cmd
 ipconfig /all
@@ -132,18 +197,14 @@ arp -a
 netstat -ano
 ```
 
----
-
-## PowerShell
+### PowerShell
 
 ```powershell
 Test-NetConnection google.com -Port 443
 Get-NetTCPConnection
 ```
 
----
-
-## Linux
+### Linux
 
 ```bash
 ip addr
@@ -158,9 +219,7 @@ curl -v https://example.com
 nc -vz example.com 443
 ```
 
----
-
-## Wireshark Filters
+### Wireshark Filters
 
 ```text
 arp
@@ -180,18 +239,23 @@ tcp.analysis.retransmission
 
 ---
 
-# Notes
+## Notes
 
-```text
-كل ملف مستقل ويمكن قراءته وحده
-لكن الأفضل قراءة الملفات بالترتيب
-الأمثلة عملية ومناسبة للتطبيق على جهازك أو Lab خاص بك
-استخدم أوامر الفحص فقط على شبكات تملكها أو لديك تصريح عليها
-```
+* Each file can be read independently, but following the suggested order is recommended.
+* The examples are practical and suitable for labs using tools such as Packet Tracer, GNS3, or a local virtual lab.
+* This repository is useful for beginners, students, junior network engineers, and people interested in cybersecurity fundamentals.
 
 ---
 
-# Repository Structure
+## Security Note
+
+Use scanning tools such as Nmap only on networks you own or networks where you have clear written permission.
+
+Unauthorized scanning or testing may be illegal and unethical.
+
+---
+
+## Repository Structure
 
 ```text
 .
@@ -216,5 +280,19 @@ tcp.analysis.retransmission
 ├── Network-Troubleshooting-Commands.md
 ├── Networking-Practical-Labs.md
 ├── Wireshark-Basics.md
-└── Common-Networking-Mistakes.md
+├── Common-Networking-Mistakes.md
+├── Networking-Glossary.md
+├── Network-Security-Basics.md
+├── Firewall-Basics.md
+├── VPN-Basics.md
+├── Proxy-and-Reverse-Proxy.md
+├── Load-Balancer-Basics.md
+├── CDN-Basics.md
+├── DHCP-DNS-ARP-Practical-Scenarios.md
+├── Linux-Networking-Commands.md
+├── Windows-Networking-Commands.md
+├── Nmap-Basics.md
+├── Common-Ports-and-Services.md
+├── Web-Networking-for-Bug-Bounty.md
+└── Final-Networking-Cheat-Sheet.md
 ```
